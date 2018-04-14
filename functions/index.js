@@ -49,22 +49,32 @@ app.set('view engine','hbs');
 var revokedTime=0;
 
 
+app.get("/hack", function(request, response) {
+  response.render('data.hbs');
+});
+
 app.get("/data", function(request, response) {
 
 
     var idToken = request.param('token');
     console.log(idToken);
-    //
+    
     //var uid = request.param('uid')
     
     admin.auth().verifyIdToken(idToken)
     .then(function(decodedToken) {
+      console.log("test");
       var uid = decodedToken.uid;
-      response.cookie('name', 'express').send('cookie set');
-      console.log("uid",uid);
+      response.cookie('uid',JSON.stringify({user_id:uid.toString(),token:idToken.toString()}));
+      //console.log(request.cookies)
+      //var cookieData = JSON.parse(request.cookies.uid)
+      //sconsole.log(cookieData);
+      
+      response.render('data.hbs');
     }).catch(function(error) {
       console.log(error);
     });
+    
     
 });
 
@@ -76,4 +86,5 @@ app.get('/',(req,res)=>{
     res.render('auth.hbs');
     //res.sendFile(__dirname+'/../public/msg.html');
 });
+
 exports.server = functions.https.onRequest(app);

@@ -1,4 +1,3 @@
-alert("Connected");
 
 var config = {
     apiKey: "AIzaSyC89JNB8JPIyPAVXq_uqXWkwN3_m1ELhPc",
@@ -11,7 +10,6 @@ var config = {
 
   
 firebase.initializeApp(config);
-alert("user");
 
 
 const sign  = document.querySelector("#sign");
@@ -20,6 +18,7 @@ sign.addEventListener("click",function(){
   firebase.auth().signInWithPopup(provider).then(function(result) {
         console.log(result);
         firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+          //window.location.href = "https://us-central1-cocreate-ac987.cloudfunctions.net/server/data?token="+idToken;
           window.location.href = "http://localhost:5001/cocreate-ac987/us-central1/server/data?token="+idToken;
         
         }).catch(function(error) {

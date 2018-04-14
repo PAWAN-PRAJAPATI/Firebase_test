@@ -1,0 +1,51 @@
+[debug] [2018-04-14T16:39:55.097Z] ----------------------------------------------------------------------
+[debug] [2018-04-14T16:39:55.099Z] Command:       /usr/bin/node /usr/local/bin/firebase serve --only hosting,functions
+[debug] [2018-04-14T16:39:55.100Z] CLI Version:   3.17.6
+[debug] [2018-04-14T16:39:55.100Z] Platform:      linux
+[debug] [2018-04-14T16:39:55.100Z] Node Version:  v6.13.1
+[debug] [2018-04-14T16:39:55.100Z] Time:          Sat Apr 14 2018 22:09:55 GMT+0530 (IST)
+[debug] [2018-04-14T16:39:55.100Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-14T16:39:55.111Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-14T16:39:55.111Z] > authorizing via signed-in user
+[debug] [2018-04-14T16:39:55.114Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cocreate-ac987  
+  
+ Sat Apr 14 2018 22:09:55 GMT+0530 (IST)
+[debug] [2018-04-14T16:39:56.780Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-14T16:39:56.788Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/cocreate-ac987/tokens  
+  
+ Sat Apr 14 2018 22:09:56 GMT+0530 (IST)
+[debug] [2018-04-14T16:39:58.271Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-14T16:39:58.273Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/cocreate-ac987  
+  
+ Sat Apr 14 2018 22:09:58 GMT+0530 (IST)
+[debug] [2018-04-14T16:39:59.844Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/media/pawan/UD/Web Programming/node/socket'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-14T16:40:00.606Z] Fetching environment
+[debug] [2018-04-14T16:40:00.609Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/98128912235:getServerAppConfig  
+  
+ Sat Apr 14 2018 22:10:00 GMT+0530 (IST)
+[debug] [2018-04-14T16:40:00.610Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/98128912235/clients/_:getWebAppConfig  
+  
+ Sat Apr 14 2018 22:10:00 GMT+0530 (IST)
+[warn] ⚠  functions: Error from emulator. FirebaseError: Server Error. getaddrinfo EAI_AGAIN mobilesdk-pa.googleapis.com:443
+[debug] [2018-04-14T16:40:20.634Z] Error
+    at Error.FirebaseError (/usr/local/lib/node_modules/firebase-tools/lib/error.js:11:17)
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:34:23)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:186:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:878:8)
+    at emitOne (events.js:96:13)
+    at ClientRequest.emit (events.js:188:7)
+    at TLSSocket.socketErrorListener (_http_client.js:310:9)
+    at emitOne (events.js:96:13)
+[debug] [2018-04-14T16:40:35.763Z] Error: getaddrinfo EAI_AGAIN mobilesdk-pa.googleapis.com:443
+    at Object.exports._errnoException (util.js:1020:11)
+    at errnoException (dns.js:33:15)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+[error] 
+[error] Error: Server Error. getaddrinfo EAI_AGAIN mobilesdk-pa.googleapis.com:443
